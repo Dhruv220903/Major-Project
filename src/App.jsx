@@ -1,17 +1,24 @@
+import React from 'react';
+import './App.css';
 
-import './App.css'
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Aboutus from './components/Aboutus'; 
+import Header from './components/Header'
+import Footer from './components/Footer'
 function App() {
-  
-
-  return (
+  return (  
     <>
-      <h2 className="text-red-700 text-5xl text-center text-slate-700  ">Hello</h2>
-      <div className="min-h-10 min-w-24 p-10 bg-red-600 flex justify-center">
-          <h1 className='text-5xl text-yellow-600'>Hello</h1>
-      </div>
+      <Router>
+        <Header></Header>
+        <Routes>
+          <Route path='/aboutus' element={<Aboutus />} />
+
+        </Routes>
+
+        <Footer></Footer>
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
